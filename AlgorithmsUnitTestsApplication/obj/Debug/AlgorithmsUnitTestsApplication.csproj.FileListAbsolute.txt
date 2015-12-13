@@ -1,0 +1,16 @@
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmsUnitTestsApplication.dll
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmsUnitTestsApplication.pdb
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmLibrary.dll
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmLibrary.pdb
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\obj\Debug\AlgorithmsUnitTestsApplication.csprojResolveAssemblyReference.cache
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\obj\Debug\AlgorithmsUnitTestsApplication.dll
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\obj\Debug\AlgorithmsUnitTestsApplication.pdb
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmsUnitTestsApplication.dll
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmsUnitTestsApplication.pdb
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmLibrary.dll
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\bin\Debug\AlgorithmLibrary.pdb
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\obj\Debug\AlgorithmsUnitTestsApplication.csprojResolveAssemblyReference.cache
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\obj\Debug\AlgorithmsUnitTestsApplication.dll
+E:\Projects\C#\AlgorithmLibrary\AlgorithmsUnitTestsApplication\obj\Debug\AlgorithmsUnitTestsApplication.pdb

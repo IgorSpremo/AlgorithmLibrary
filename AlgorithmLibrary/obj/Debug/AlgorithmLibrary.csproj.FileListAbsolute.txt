@@ -1,0 +1,10 @@
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.dll
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.pdb
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.csprojResolveAssemblyReference.cache
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.dll
+D:\Igor Spremo\Private\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.pdb
+E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.dll
+E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.pdb
+E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.dll
+E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.pdb
+E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.csprojResolveAssemblyReference.cache
