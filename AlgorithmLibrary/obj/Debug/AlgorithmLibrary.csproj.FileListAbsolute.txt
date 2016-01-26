@@ -8,3 +8,9 @@ E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.pdb
 E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.dll
 E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.pdb
 E:\Projects\C#\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.csprojResolveAssemblyReference.cache
+E:\Projects\C#\AlgorithmsAndDataCollections\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.exe.config
+E:\Projects\C#\AlgorithmsAndDataCollections\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.exe
+E:\Projects\C#\AlgorithmsAndDataCollections\AlgorithmLibrary\AlgorithmLibrary\bin\Debug\AlgorithmLibrary.pdb
+E:\Projects\C#\AlgorithmsAndDataCollections\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.exe
+E:\Projects\C#\AlgorithmsAndDataCollections\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.pdb
+E:\Projects\C#\AlgorithmsAndDataCollections\AlgorithmLibrary\AlgorithmLibrary\obj\Debug\AlgorithmLibrary.csprojResolveAssemblyReference.cache

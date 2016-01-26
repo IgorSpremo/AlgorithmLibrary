@@ -11,7 +11,7 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
 
         #region Properties
 
-        public HashSet<Node> Nodes { get; set; }
+        public Dictionary<string, Node> Nodes { get; set; }
 
         public HashSet<Edge> Edges { get; set; }
 
@@ -21,7 +21,7 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
 
         public AdjacencyListGraph()
         {
-            Nodes = new HashSet<Node>();
+            Nodes = new Dictionary<string, Node>();
             Edges = new HashSet<Edge>();
         }
 
@@ -38,13 +38,13 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
         /// <returns>TRUE if the Node is added to the list; FALSE otherwise.</returns>
         public bool AddNode(Node node)
         {
-            if (node == null || Nodes.Contains(node))
+            if (node == null || Nodes.ContainsKey(node.Id))
             {
                 return false;
             }
             else
             {
-                Nodes.Add(node);
+                Nodes.Add(node.Id, node);
                 return true;
             }
         }
@@ -57,7 +57,7 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
         ///          FALSE if given node is not in the list.</returns>
         public bool RemoveNode(Node nodeToRemove)
         {
-            return Nodes.Remove(nodeToRemove);
+            return Nodes.Remove(nodeToRemove.Id);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
         /// <returns>TRUE if item is found in the Nodes list; otherwise, FALSE.</returns>
         public bool ContainsNode(Node node)
         {
-            return Nodes.Contains(node);
+            return Nodes.ContainsKey(node.Id);
         }
 
         #endregion
@@ -123,10 +123,10 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
         {
             AdjacencyListGraph clonedGraph = new AdjacencyListGraph();
 
-            HashSet<Node> clonedNodes = new HashSet<Node>();
-            foreach (Node n in Nodes)
+            Dictionary<string, Node> clonedNodes = new Dictionary<string, Node>();
+            foreach (Node n in Nodes.Values)
             {
-                clonedNodes.Add(n.Clone() as Node);
+                clonedNodes.Add(n.Id.Clone() as string, n.Clone() as Node);
             }
 
             HashSet<Edge> clonedEdges = new HashSet<Edge>();
@@ -150,16 +150,49 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
         public bool TryFindNodeById(string nodeId, out Node nodeToFind)
         {
             nodeToFind = null;
-            foreach (Node node in Nodes)
+
+            if (Nodes.ContainsKey(nodeId))
             {
-                if (node.Id.Equals(nodeId))
-                {
-                    nodeToFind = node;
-                    return true;
-                }
+                nodeToFind = Nodes[nodeId];
+                return true;
             }
 
             return false;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder strBuilder = new StringBuilder();
+
+            strBuilder.Append("AdjacencyListGraph:");
+            strBuilder.Append(Environment.NewLine);
+            strBuilder.Append(Environment.NewLine);
+
+            strBuilder.Append("Nodes:");
+            strBuilder.Append(Environment.NewLine);
+
+            foreach (Node n in Nodes.Values)
+            {
+                strBuilder.Append(n.Id);
+                strBuilder.Append(" ");
+            }
+
+            strBuilder.Append(Environment.NewLine);
+            strBuilder.Append(Environment.NewLine);
+
+            strBuilder.Append("Edges:");
+            strBuilder.Append(Environment.NewLine);
+
+            foreach (Edge e in Edges)
+            {
+                strBuilder.Append(e.Id);
+                strBuilder.Append(" ");
+            }
+
+            strBuilder.Append(Environment.NewLine);
+            strBuilder.Append(Environment.NewLine);
+
+            return strBuilder.ToString();
         }
 
         #endregion

@@ -12,81 +12,117 @@ namespace AlgorithmLibrary.GraphSearch
     {
 
 
-        public static List<Node> BFS(AdjacencyListGraph graph, Node startingNode)
+        public static List<Node> BFS(AdjacencyListGraph graph, string startingNodeId)
         {
-            List<Node> retVal = new List<Node>();
-            Queue<Node> queue = new Queue<Node>();
+            Node startingNode;
 
-
-            startingNode.Explored = true;
-            queue.Enqueue(startingNode);
-
-            while (queue.Any<Node>())
+            if (graph.Nodes.TryGetValue(startingNodeId, out startingNode))
             {
-                Node currentNode = queue.Dequeue();
-                retVal.Add(currentNode);
+                List<Node> retVal = new List<Node>();
+                Queue<Node> queue = new Queue<Node>();
 
-                HashSet<Node> adjacentNodesOfCurrentNode = currentNode.AdjacentNodes;
+                startingNode.Explored = true;
+                queue.Enqueue(startingNode);
 
-                foreach (Node adjacentNode in adjacentNodesOfCurrentNode)
+                while (queue.Any<Node>())
                 {
-                    if (!adjacentNode.Explored)
+                    Node currentNode = queue.Dequeue();
+                    retVal.Add(currentNode);
+
+                    HashSet<string> adjacentNodesOfCurrentNode = currentNode.AdjacentNodes;
+                    Node adjacentNode = null;
+
+                    foreach (string adjacentNodeId in adjacentNodesOfCurrentNode)
                     {
-                        adjacentNode.Explored = true;
-                        queue.Enqueue(adjacentNode);
+                        if (graph.TryFindNodeById(adjacentNodeId, out adjacentNode))
+                        {
+                            if (!adjacentNode.Explored)
+                            {
+                                adjacentNode.Explored = true;
+                                queue.Enqueue(adjacentNode);
+                            }
+                        }
                     }
                 }
-            }
 
-            return retVal;
+                return retVal;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public static List<Node> NonRecursiveDFS(AdjacencyListGraph graph, Node startingNode)
+        public static List<Node> NonRecursiveDFS(AdjacencyListGraph graph, string startingNodeId)
         {
-            List<Node> retVal = new List<Node>();
-            Stack<Node> stack = new Stack<Node>();
-            
-            startingNode.Explored = true;
-            stack.Push(startingNode);
+            Node startingNode;
+            if (graph.Nodes.TryGetValue(startingNodeId, out startingNode))
+            { 
+                List<Node> retVal = new List<Node>();
+                Stack<Node> stack = new Stack<Node>();
 
-            while (stack.Any<Node>())
-            {
-                Node currentNode = stack.Pop();
-                retVal.Add(currentNode);
 
-                HashSet<Node> adjacentNodesOfCurrentNode = currentNode.AdjacentNodes;
+                startingNode.Explored = true;
+                stack.Push(startingNode);
 
-                foreach (Node adjacentNode in adjacentNodesOfCurrentNode)
+                while (stack.Any<Node>())
                 {
-                    if (!adjacentNode.Explored)
+                    Node currentNode = stack.Pop();
+                    retVal.Add(currentNode);
+
+                    HashSet<string> adjacentNodesOfCurrentNode = currentNode.AdjacentNodes;
+                    Node adjacentNode = null;
+
+                    foreach (string adjacentNodeId in adjacentNodesOfCurrentNode)
                     {
-                        adjacentNode.Explored = true;
-                        stack.Push(adjacentNode);
+                        if (graph.TryFindNodeById(adjacentNodeId, out adjacentNode))
+                        {
+                            if (!adjacentNode.Explored)
+                            {
+                                adjacentNode.Explored = true;
+                                stack.Push(adjacentNode);
+                            }
+                        }
                     }
                 }
-            }
 
-            return retVal;
+                return retVal;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public static List<Node> RecursiveDFS(AdjacencyListGraph graph, Node startingNode)
+        public static List<Node> RecursiveDFS(AdjacencyListGraph graph, string startingNodeId)
         {
-            List<Node> retVal = new List<Node>();
-            
-            startingNode.Explored = true;
-            retVal.Add(startingNode);
+            Node startingNode;
 
-            HashSet<Node> adjacentNodesOfCurrentNode = startingNode.AdjacentNodes;
-
-            foreach (Node adjacentNode in adjacentNodesOfCurrentNode)
+            if (graph.Nodes.TryGetValue(startingNodeId, out startingNode))
             {
-                if (!adjacentNode.Explored)
+                List<Node> retVal = new List<Node>();
+
+                startingNode.Explored = true;
+                retVal.Add(startingNode);
+
+                HashSet<string> adjacentNodesOfCurrentNode = startingNode.AdjacentNodes;
+
+                foreach (string adjacentNodeId in adjacentNodesOfCurrentNode)
                 {
-                    retVal.AddRange(RecursiveDFS(graph, adjacentNode));
+                    Node adjacentNode;
+                    if (graph.TryFindNodeById(adjacentNodeId, out adjacentNode))
+                    {
+                        if (!adjacentNode.Explored)
+                        {
+                            retVal.AddRange(RecursiveDFS(graph, adjacentNode.Id));
+                        }
+                    }
                 }
+
+                return retVal;
             }
-            
-            return retVal;
+
+            return null;
         }
 
         /// <summary>
@@ -106,16 +142,22 @@ namespace AlgorithmLibrary.GraphSearch
 
             foreach (AdjacencyListGraph graph in clonedGraphs)
             {
-                foreach(Node node in graph.Nodes)
+                foreach(Node node in graph.Nodes.Values)
                 {
                     if (!node.Explored)
                     {
-                        retVal.Add(BFS(graph, node));
+                        retVal.Add(BFS(graph, node.Id));
                     }
                 }
             }
 
             return retVal;
+        }
+
+        // TODO: Implement this algorithm.
+        public List<Node> DijkstraSearch(AdjacencyListGraph graph)
+        {
+            throw new NotImplementedException();
         }
 
     }

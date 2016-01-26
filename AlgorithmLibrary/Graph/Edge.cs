@@ -36,6 +36,10 @@ namespace AlgorithmLibrary.Graph
             Weight = weight;
         }
 
+        #endregion
+
+        #region Methods
+
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())

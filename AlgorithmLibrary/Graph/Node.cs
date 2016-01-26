@@ -11,7 +11,9 @@ namespace AlgorithmLibrary.Graph
     {
         #region Fields
 
-        protected HashSet<Node> adjacentNodes = new HashSet<Node>();
+        //protected HashSet<Node> adjacentNodes = new HashSet<Node>();
+
+        protected HashSet<string> adjacentNodesIds = new HashSet<string>();
 
         #endregion
 
@@ -23,11 +25,11 @@ namespace AlgorithmLibrary.Graph
 
         public List<Edge> Edges { get; set; }
 
-        public HashSet<Node> AdjacentNodes
+        public HashSet<string> AdjacentNodes
         {
             get
             {
-                return adjacentNodes;
+                return adjacentNodesIds;
             }
         }
 
@@ -58,9 +60,9 @@ namespace AlgorithmLibrary.Graph
         /// <param name="edge">An edge containing this Node and the adjacent Node.</param>
         protected void AddNewAdjacentNode(AdjacencyListGraph graph, Edge edge)
         {
-            if (adjacentNodes == null)
+            if (adjacentNodesIds == null)
             {
-                adjacentNodes = new HashSet<Node>();
+                adjacentNodesIds = new HashSet<string>();
             }
 
             Node node1;
@@ -68,17 +70,17 @@ namespace AlgorithmLibrary.Graph
 
             if (graph.TryFindNodeById(edge.FirstNodeId, out node1) &&
                 !edge.IsDirected && 
-                !adjacentNodes.Contains(node1) && 
+                !adjacentNodesIds.Contains(node1.Id) && 
                 this != node1)
             {
-                adjacentNodes.Add(node1);
+                adjacentNodesIds.Add(node1.Id);
             }
 
             if (graph.TryFindNodeById(edge.SecondNodeId, out node2) && 
-                !adjacentNodes.Contains(node2) && 
+                !adjacentNodesIds.Contains(node2.Id) && 
                 this != node2)
             {
-                adjacentNodes.Add(node2);
+                adjacentNodesIds.Add(node2.Id);
             }
         }
 
@@ -128,10 +130,14 @@ namespace AlgorithmLibrary.Graph
             clonedNode.Id = Id;
             clonedNode.Explored = Explored;
 
-            clonedNode.adjacentNodes = new HashSet<Node>();
-            foreach (Node n in adjacentNodes)
+            clonedNode.adjacentNodesIds = new HashSet<string>();
+            foreach (string nodeId in adjacentNodesIds)
             {
-                clonedNode.adjacentNodes.Add(n.Clone() as Node);
+                if (!clonedNode.adjacentNodesIds.Contains(nodeId))
+                {
+                    clonedNode.adjacentNodesIds.Add(nodeId);
+                    //clonedNode.adjacentNodes.Add(nodeId.Clone() as Node);
+                }
             }
 
             clonedNode.Edges = new List<Edge>(Edges.Count);

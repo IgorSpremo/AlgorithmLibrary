@@ -200,232 +200,232 @@ namespace AlgorithmsUnitTestsApplication
 
         }
 
-        [TestMethod]
-        public void BfsUndirectedGraphTest()
-        {
-            AdjacencyListGraph graph = PrepareUndirectedGraph();
-            HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
+        //[TestMethod]
+        //public void BfsUndirectedGraphTest()
+        //{
+        //    AdjacencyListGraph graph = PrepareUndirectedGraph();
+        //    HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
 
-            graphEnumerator.MoveNext();
-            Node startingNode = graphEnumerator.Current;
+        //    graphEnumerator.MoveNext();
+        //    Node startingNode = graphEnumerator.Current;
 
-            List<Node> expected = new List<Node>(8);
-            Node[] nodes = new Node[8];
+        //    List<Node> expected = new List<Node>(8);
+        //    Node[] nodes = new Node[8];
 
-            for (int i = 0; i < 8; i++)
-            {
-                nodes[i] = new Node();
-                nodes[i].Id = (i + 1).ToString();
-            }
+        //    for (int i = 0; i < 8; i++)
+        //    {
+        //        nodes[i] = new Node();
+        //        nodes[i].Id = (i + 1).ToString();
+        //    }
 
-            expected.Add(nodes[0]);
-            expected.Add(nodes[5]);
-            expected.Add(nodes[3]);
-            expected.Add(nodes[1]);
-            expected.Add(nodes[6]);
-            expected.Add(nodes[4]);
-            expected.Add(nodes[2]);
-            expected.Add(nodes[7]);
+        //    expected.Add(nodes[0]);
+        //    expected.Add(nodes[5]);
+        //    expected.Add(nodes[3]);
+        //    expected.Add(nodes[1]);
+        //    expected.Add(nodes[6]);
+        //    expected.Add(nodes[4]);
+        //    expected.Add(nodes[2]);
+        //    expected.Add(nodes[7]);
 
-            List<Node> actual = GraphSearch.BFS(graph, startingNode);
-            
-            CollectionAssert.AreEqual(expected, actual);
-        }
+        //    List<Node> actual = GraphSearch.BFS(graph, startingNode);
 
-
-        [TestMethod]
-        public void BfsDirectedGraphTest()
-        {
-            AdjacencyListGraph graph = PrepareDirectedGraph();
-            HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
-
-            graphEnumerator.MoveNext();
-            Node startingNode = graphEnumerator.Current;
-
-            List<Node> expected = new List<Node>(8);
-            Node[] nodes = new Node[8];
-
-            for (int i = 0; i < 8; i++)
-            {
-                nodes[i] = new Node();
-                nodes[i].Id = (i + 1).ToString();
-            }
-
-            expected.Add(nodes[0]);
-            expected.Add(nodes[5]);
-            expected.Add(nodes[3]);
-            expected.Add(nodes[1]);
-            expected.Add(nodes[6]);
-            expected.Add(nodes[4]);
-            expected.Add(nodes[7]);
-
-            List<Node> actual = GraphSearch.BFS(graph, startingNode);
-
-            CollectionAssert.AreEqual(expected, actual);
-        }
+        //    CollectionAssert.AreEqual(expected, actual);
+        //}
 
 
-        [TestMethod]
-        public void RecursiveDfsUndirectedGraphTest()
-        {
-            AdjacencyListGraph graph = PrepareUndirectedGraph();
-            HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
+        //[TestMethod]
+        //public void BfsDirectedGraphTest()
+        //{
+        //    AdjacencyListGraph graph = PrepareDirectedGraph();
+        //    HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
 
-            graphEnumerator.MoveNext();
-            Node startingNode = graphEnumerator.Current;
+        //    graphEnumerator.MoveNext();
+        //    Node startingNode = graphEnumerator.Current;
 
-            List<Node> expected = new List<Node>(8);
-            Node[] nodes = new Node[8];
+        //    List<Node> expected = new List<Node>(8);
+        //    Node[] nodes = new Node[8];
 
-            for (int i = 0; i < 8; i++)
-            {
-                nodes[i] = new Node();
-                nodes[i].Id = (i + 1).ToString();
-            }
+        //    for (int i = 0; i < 8; i++)
+        //    {
+        //        nodes[i] = new Node();
+        //        nodes[i].Id = (i + 1).ToString();
+        //    }
 
-            expected.Add(nodes[0]);
-            expected.Add(nodes[5]);
-            expected.Add(nodes[3]);
-            expected.Add(nodes[1]);
-            expected.Add(nodes[6]);
-            expected.Add(nodes[4]);
-            expected.Add(nodes[2]);
-            expected.Add(nodes[7]);
+        //    expected.Add(nodes[0]);
+        //    expected.Add(nodes[5]);
+        //    expected.Add(nodes[3]);
+        //    expected.Add(nodes[1]);
+        //    expected.Add(nodes[6]);
+        //    expected.Add(nodes[4]);
+        //    expected.Add(nodes[7]);
 
-            List<Node> actual = GraphSearch.RecursiveDFS(graph, startingNode);
+        //    List<Node> actual = GraphSearch.BFS(graph, startingNode);
 
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void NonRecursiveDfsUndirectedGraphTest()
-        {
-            AdjacencyListGraph graph = PrepareUndirectedGraph();
-            HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
-
-            graphEnumerator.MoveNext();
-            Node startingNode = graphEnumerator.Current;
-
-            List<Node> expected = new List<Node>(8);
-            Node[] nodes = new Node[8];
-
-            for (int i = 0; i < 8; i++)
-            {
-                nodes[i] = new Node();
-                nodes[i].Id = (i + 1).ToString();
-            }
-
-            expected.Add(nodes[0]);
-            expected.Add(nodes[1]);
-            expected.Add(nodes[4]);
-            expected.Add(nodes[7]);
-            expected.Add(nodes[2]);
-            expected.Add(nodes[6]);
-            expected.Add(nodes[3]);
-            expected.Add(nodes[5]);
-
-            List<Node> actual = GraphSearch.NonRecursiveDFS(graph, startingNode);
-
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void RecursiveDfsDirectedGraphTest()
-        {
-            AdjacencyListGraph graph = PrepareDirectedGraph();
-            HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
-
-            graphEnumerator.MoveNext();
-            Node startingNode = graphEnumerator.Current;
-
-            List<Node> expected = new List<Node>(8);
-            Node[] nodes = new Node[8];
-
-            for (int i = 0; i < 8; i++)
-            {
-                nodes[i] = new Node();
-                nodes[i].Id = (i + 1).ToString();
-            }
-
-            expected.Add(nodes[0]);
-            expected.Add(nodes[5]);
-            expected.Add(nodes[6]);
-            expected.Add(nodes[3]);
-            expected.Add(nodes[4]);
-            expected.Add(nodes[7]);
-            expected.Add(nodes[1]);
-
-            List<Node> actual = GraphSearch.RecursiveDFS(graph, startingNode);
-
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void NonRecursiveDfsDirectedGraphTest()
-        {
-            AdjacencyListGraph graph = PrepareDirectedGraph();
-            HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
-
-            graphEnumerator.MoveNext();
-            Node startingNode = graphEnumerator.Current;
-
-            List<Node> expected = new List<Node>(8);
-            Node[] nodes = new Node[8];
-
-            for (int i = 0; i < 8; i++)
-            {
-                nodes[i] = new Node();
-                nodes[i].Id = (i + 1).ToString();
-            }
-
-            expected.Add(nodes[0]);
-            expected.Add(nodes[1]);
-            expected.Add(nodes[4]);
-            expected.Add(nodes[7]);
-            expected.Add(nodes[6]);
-            expected.Add(nodes[3]);
-            expected.Add(nodes[5]);
-
-            List<Node> actual = GraphSearch.NonRecursiveDFS(graph, startingNode);
-
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void FindConnectedComponentsTest()
-        {
-
-            AdjacencyListGraph graph1 = PrepareUndirectedGraph();
-            AdjacencyListGraph graph2 = PrepareUndirectedGraph();
-            AdjacencyListGraph graph3 = PrepareUndirectedGraph();
-
-            List<AdjacencyListGraph> graphs = new List<AdjacencyListGraph>(3);
-            graphs.Add(graph1);
-            graphs.Add(graph2);
-            graphs.Add(graph3);
-
-            HashSet<Node>.Enumerator graph1Enumerator = graph1.Nodes.GetEnumerator();
-            graph1Enumerator.MoveNext();
-            Node startingNode1 = graph1Enumerator.Current;
-
-            HashSet<Node>.Enumerator graph2Enumerator = graph2.Nodes.GetEnumerator();
-            graph2Enumerator.MoveNext();
-            Node startingNode2 = graph2Enumerator.Current;
-
-            HashSet<Node>.Enumerator graph3Enumerator = graph3.Nodes.GetEnumerator();
-            graph3Enumerator.MoveNext();
-            Node startingNode3 = graph3Enumerator.Current;
+        //    CollectionAssert.AreEqual(expected, actual);
+        //}
 
 
-            List<List<Node>> expectedValue = new List<List<Node>>(3);
-            expectedValue.Add(GraphSearch.BFS(graph1, startingNode1));
-            expectedValue.Add(GraphSearch.BFS(graph2, startingNode2));
-            expectedValue.Add(GraphSearch.BFS(graph3, startingNode3));
+        //[TestMethod]
+        //public void RecursiveDfsUndirectedGraphTest()
+        //{
+        //    AdjacencyListGraph graph = PrepareUndirectedGraph();
+        //    HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
 
-            List<List<Node>> actualValue = GraphSearch.FindConnectedComponentsInUnirectedGraph(graphs);
+        //    graphEnumerator.MoveNext();
+        //    Node startingNode = graphEnumerator.Current;
 
-            CollectionAssert.AreEquivalent(expectedValue, actualValue);
-        }
+        //    List<Node> expected = new List<Node>(8);
+        //    Node[] nodes = new Node[8];
+
+        //    for (int i = 0; i < 8; i++)
+        //    {
+        //        nodes[i] = new Node();
+        //        nodes[i].Id = (i + 1).ToString();
+        //    }
+
+        //    expected.Add(nodes[0]);
+        //    expected.Add(nodes[5]);
+        //    expected.Add(nodes[3]);
+        //    expected.Add(nodes[1]);
+        //    expected.Add(nodes[6]);
+        //    expected.Add(nodes[4]);
+        //    expected.Add(nodes[2]);
+        //    expected.Add(nodes[7]);
+
+        //    List<Node> actual = GraphSearch.RecursiveDFS(graph, startingNode);
+
+        //    CollectionAssert.AreEqual(expected, actual);
+        //}
+
+        //[TestMethod]
+        //public void NonRecursiveDfsUndirectedGraphTest()
+        //{
+        //    AdjacencyListGraph graph = PrepareUndirectedGraph();
+        //    HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
+
+        //    graphEnumerator.MoveNext();
+        //    Node startingNode = graphEnumerator.Current;
+
+        //    List<Node> expected = new List<Node>(8);
+        //    Node[] nodes = new Node[8];
+
+        //    for (int i = 0; i < 8; i++)
+        //    {
+        //        nodes[i] = new Node();
+        //        nodes[i].Id = (i + 1).ToString();
+        //    }
+
+        //    expected.Add(nodes[0]);
+        //    expected.Add(nodes[1]);
+        //    expected.Add(nodes[4]);
+        //    expected.Add(nodes[7]);
+        //    expected.Add(nodes[2]);
+        //    expected.Add(nodes[6]);
+        //    expected.Add(nodes[3]);
+        //    expected.Add(nodes[5]);
+
+        //    List<Node> actual = GraphSearch.NonRecursiveDFS(graph, startingNode);
+
+        //    CollectionAssert.AreEqual(expected, actual);
+        //}
+
+        //[TestMethod]
+        //public void RecursiveDfsDirectedGraphTest()
+        //{
+        //    AdjacencyListGraph graph = PrepareDirectedGraph();
+        //    HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
+
+        //    graphEnumerator.MoveNext();
+        //    Node startingNode = graphEnumerator.Current;
+
+        //    List<Node> expected = new List<Node>(8);
+        //    Node[] nodes = new Node[8];
+
+        //    for (int i = 0; i < 8; i++)
+        //    {
+        //        nodes[i] = new Node();
+        //        nodes[i].Id = (i + 1).ToString();
+        //    }
+
+        //    expected.Add(nodes[0]);
+        //    expected.Add(nodes[5]);
+        //    expected.Add(nodes[6]);
+        //    expected.Add(nodes[3]);
+        //    expected.Add(nodes[4]);
+        //    expected.Add(nodes[7]);
+        //    expected.Add(nodes[1]);
+
+        //    List<Node> actual = GraphSearch.RecursiveDFS(graph, startingNode);
+
+        //    CollectionAssert.AreEqual(expected, actual);
+        //}
+
+        //[TestMethod]
+        //public void NonRecursiveDfsDirectedGraphTest()
+        //{
+        //    AdjacencyListGraph graph = PrepareDirectedGraph();
+        //    HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
+
+        //    graphEnumerator.MoveNext();
+        //    Node startingNode = graphEnumerator.Current;
+
+        //    List<Node> expected = new List<Node>(8);
+        //    Node[] nodes = new Node[8];
+
+        //    for (int i = 0; i < 8; i++)
+        //    {
+        //        nodes[i] = new Node();
+        //        nodes[i].Id = (i + 1).ToString();
+        //    }
+
+        //    expected.Add(nodes[0]);
+        //    expected.Add(nodes[1]);
+        //    expected.Add(nodes[4]);
+        //    expected.Add(nodes[7]);
+        //    expected.Add(nodes[6]);
+        //    expected.Add(nodes[3]);
+        //    expected.Add(nodes[5]);
+
+        //    List<Node> actual = GraphSearch.NonRecursiveDFS(graph, startingNode);
+
+        //    CollectionAssert.AreEqual(expected, actual);
+        //}
+
+        //[TestMethod]
+        //public void FindConnectedComponentsTest()
+        //{
+
+        //    AdjacencyListGraph graph1 = PrepareUndirectedGraph();
+        //    AdjacencyListGraph graph2 = PrepareUndirectedGraph();
+        //    AdjacencyListGraph graph3 = PrepareUndirectedGraph();
+
+        //    List<AdjacencyListGraph> graphs = new List<AdjacencyListGraph>(3);
+        //    graphs.Add(graph1);
+        //    graphs.Add(graph2);
+        //    graphs.Add(graph3);
+
+        //    HashSet<Node>.Enumerator graph1Enumerator = graph1.Nodes.GetEnumerator();
+        //    graph1Enumerator.MoveNext();
+        //    Node startingNode1 = graph1Enumerator.Current;
+
+        //    HashSet<Node>.Enumerator graph2Enumerator = graph2.Nodes.GetEnumerator();
+        //    graph2Enumerator.MoveNext();
+        //    Node startingNode2 = graph2Enumerator.Current;
+
+        //    HashSet<Node>.Enumerator graph3Enumerator = graph3.Nodes.GetEnumerator();
+        //    graph3Enumerator.MoveNext();
+        //    Node startingNode3 = graph3Enumerator.Current;
+
+
+        //    List<List<Node>> expectedValue = new List<List<Node>>(3);
+        //    expectedValue.Add(GraphSearch.BFS(graph1, startingNode1));
+        //    expectedValue.Add(GraphSearch.BFS(graph2, startingNode2));
+        //    expectedValue.Add(GraphSearch.BFS(graph3, startingNode3));
+
+        //    List<List<Node>> actualValue = GraphSearch.FindConnectedComponentsInUnirectedGraph(graphs);
+
+        //    CollectionAssert.AreEquivalent(expectedValue, actualValue);
+        //}
 
         #endregion
 
