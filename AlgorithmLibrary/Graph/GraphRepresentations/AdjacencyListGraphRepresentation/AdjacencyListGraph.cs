@@ -15,6 +15,24 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
 
         public HashSet<Edge> Edges { get; set; }
 
+        public bool IsDirected
+        {
+            get
+            {
+                if (Edges != null)
+                {
+                    if (Edges.Count > 0)
+                    {
+                        return Edges.First().IsDirected;
+                    }
+
+                    throw new ArgumentException("There are no edges in this graph!");
+                }
+
+                throw new ArgumentNullException("Edges collection is null!");
+            }
+        }
+
         #endregion
 
         #region Constructors

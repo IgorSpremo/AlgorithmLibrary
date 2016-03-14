@@ -126,12 +126,18 @@ namespace AlgorithmLibrary.GraphSearch
         }
 
         /// <summary>
-        /// A method used for finding separate connected components (graphs) in a List of AdjacencyListGraphs.
+        /// The method used for finding separate connected components (graphs) in a List of undirected AdjacencyListGraphs.
         /// </summary>
-        /// <param name="graphs">A List of AdjacencyListGraphs that is to be explored for connected graphs.</param>
+        /// <param name="graphs">A List of undirected AdjacencyListGraphs that is to be explored for connected graphs.</param>
         /// <returns>A List of Lists of Nodes that belong to the separated graphs.</returns>
-        public static List<List<Node>> FindConnectedComponentsInUnirectedGraph(List<AdjacencyListGraph> graphs)
+        public static List<List<Node>> FindIndependentComponentsInGraph(List<AdjacencyListGraph> graphs)
         {
+            if (graphs == null)
+                throw new ArgumentNullException("Input parameter can not be null!");
+
+            if (graphs.Count == 0)
+                throw new ArgumentException("Input parameter must contain at least one graph in it.");
+
             List<AdjacencyListGraph> clonedGraphs = new List<AdjacencyListGraph>(graphs.Count);
             foreach (AdjacencyListGraph graph in graphs)
             {
@@ -153,12 +159,12 @@ namespace AlgorithmLibrary.GraphSearch
 
             return retVal;
         }
-
+        
         // TODO: Implement this algorithm.
         public List<Node> DijkstraSearch(AdjacencyListGraph graph)
         {
             throw new NotImplementedException();
         }
-
+        
     }
 }

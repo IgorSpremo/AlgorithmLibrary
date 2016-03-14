@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\BinaryHeap.cs" />
+    <Compile Include="Collections\Queue.cs" />
+    <Compile Include="Collections\Stack.cs" />
     <Compile Include="GraphSearch\GraphSearch.cs" />
     <Compile Include="Graph\GraphRepresentations\AdjacencyListGraphRepresentation\AdjacencyListGraph.cs" />
     <Compile Include="Graph\GraphRepresentations\AdjacencyMatrixGraphRepresentation\AdjacencyGraphWithDirectedEdges.cs" />
