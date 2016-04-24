@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresentation
 {
@@ -14,7 +13,7 @@ namespace AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresen
         public Dictionary<string, Node> Nodes { get; set; }
 
         public HashSet<Edge> Edges { get; set; }
-
+        
         public bool IsDirected
         {
             get

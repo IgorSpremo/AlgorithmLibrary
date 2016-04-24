@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgorithmLibrary.Util
 {
@@ -17,7 +13,7 @@ namespace AlgorithmLibrary.Util
 
         #region Write string methods
 
-        public static void WriteLine(string data)
+        public static void AppendLine(string data)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Log.txt";
 
@@ -30,7 +26,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void WriteLine(string data, string path)
+        public static void AppendLine(string data, string path)
         {
             lock (locker)
             {
@@ -41,7 +37,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void Write(string data)
+        public static void Append(string data)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Log.txt";
 
@@ -54,7 +50,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void Write(string data, string path)
+        public static void Append(string data, string path)
         {
             lock (locker)
             {
@@ -69,7 +65,7 @@ namespace AlgorithmLibrary.Util
 
         #region Write object methods
 
-        public static void WriteLine(object data)
+        public static void AppendLine(object data)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Log.txt";
 
@@ -82,7 +78,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void WriteLine(object data, string path)
+        public static void AppendLine(object data, string path)
         {
             lock (locker)
             {
@@ -93,7 +89,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void Write(object data)
+        public static void Append(object data)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Log.txt";
 
@@ -106,7 +102,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void Write(object data, string path)
+        public static void Append(object data, string path)
         {
             lock (locker)
             {
@@ -121,7 +117,7 @@ namespace AlgorithmLibrary.Util
 
         #region Write prepared string methods
 
-        public static void WriteNewLine()
+        public static void AppendNewLine()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Log.txt";
 
@@ -134,7 +130,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void WriteNewLine(string path)
+        public static void AppendNewLine(string path)
         {
             lock (locker)
             {
@@ -145,7 +141,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void WriteSeparator()
+        public static void AppendSeparator()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Log.txt";
 
@@ -160,7 +156,7 @@ namespace AlgorithmLibrary.Util
             }
         }
 
-        public static void WriteSeparator(string path)
+        public static void AppendSeparator(string path)
         {
             lock (locker)
             {

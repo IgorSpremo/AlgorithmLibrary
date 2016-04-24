@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using AlgorithmLibrary.JobSchedulingAlgorithm;
 using AlgorithmLibrary.Graph.GraphRepresentations.AdjacencyListGraphRepresentation;
 using AlgorithmLibrary.Graph;
 using NUnit.Framework;
@@ -178,7 +177,7 @@ namespace AlgorithmsUnitTestsApplication
         public void BfsUndirectedGraphTest()
         {
             AdjacencyListGraph graph = PrepareUndirectedGraph();
-            //HashSet<Node>.Enumerator graphEnumerator = graph.Nodes.GetEnumerator();
+            
             var graphEnumerator = graph.Nodes.Values.GetEnumerator();
 
             graphEnumerator.MoveNext();

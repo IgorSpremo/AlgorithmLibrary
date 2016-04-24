@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace AlgorithmLibrary.Sorting
     ///     * HeapSort, 
     ///     * ShellSort
     /// </summary>
-    public class SorterClass<T> : IDisposable
+    public class SorterClass<T> where T : IComparable
     {
 
         public SorterClass()
@@ -21,36 +22,21 @@ namespace AlgorithmLibrary.Sorting
 
         }
 
-        public void Dispose()
-        {
-            
-        }
-
         #region Quick sort
 
-        public T[] QuickSort(T[] arrayToSort)
+        public static void QuickSort(T[] arrayToSort)
         {
-            throw new NotImplementedException();
+            QuickSort<T>.Sort(arrayToSort);
         }
-
-        public IEnumerable<T> QuickSort(ICollection<T> collectionToSort)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         #endregion
 
 
         #region Merge sort
 
-        public T[] MergeSort(T[] arrayToSort)
+        public static void MergeSort(T[] arrayToSort)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> MergeSort(ICollection<T> collectionToSort)
-        {
-            throw new NotImplementedException();
+            MergeSort<T>.Sort(arrayToSort, MergeSort<T>.ASCENDING);
         }
 
         #endregion

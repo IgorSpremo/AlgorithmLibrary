@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace AlgorithmsUnitTestsApplication
+namespace AlgorithmsUnitTestsApplication.CollectionsTests
 {
     [TestFixture]
     public class BinaryHeapTest

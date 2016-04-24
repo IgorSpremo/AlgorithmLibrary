@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using AlgorithmLibrary.Collections;
 
-namespace AlgorithmsUnitTestsApplication
+namespace AlgorithmsUnitTestsApplication.CollectionsTests
 {
     [TestFixture]
     public class QueueTest
